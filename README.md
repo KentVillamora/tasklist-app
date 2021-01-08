@@ -30,4 +30,9 @@ Building your first APK
 3. Go to actual folder of your app `/home/PcUserName/nameOfYourApp` and look for **App.js**
 4. Open **App.js** using your preferred code editor and modify the content of this file to suit your app design
    >-Each time you save the changes you made on this file, the outcome of your app will be shown real-time on the phone where Expo app was installed
-
+5. Once you are done with the code, time to build the APK file of your app using EXPO CLI
+   * expo fetch:android:keystore
+   >-Get the copy of your keystore first and store it somewhere safe. Path to Keystore:  `/home/PcUserName/nameOfYourApp/tasklist-app.jks`. You will need it at a later time.
+   * expo build:android -t apk
+   >-Your app components will be uploaded to Expo and they will queue it for building (which may take some time to complete)
+6. Download the completed build from https://expo.io/ by logging in to your own account
