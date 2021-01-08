@@ -4,10 +4,11 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.inputContainer}>
+    <View style = {styles.container}>
+      <View style = {styles.inputContainer}>
         <TextInput
           placeholder = "Task List"
+          style = {styles.input}
         />
         <Button title = "+"/>
       </View>
@@ -24,10 +25,9 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    borderColor: 'black',
+    borderColor: "black",
     borderWidth: 1,
-    justifyContent: 20,
-
+    padding: 20,
   },
 
   inputContainer: {
