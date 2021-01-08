@@ -3,14 +3,33 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
+  const [newTask, setNewTask] = useState('');
+  const taskInputHandler = (enteredText) => {
+    setNewTask(enteredText);
+  };
+  const [appTasks, appTask] = useState([]);
+  const addTaskHandler = () => {
+    appTask(currentTask => [...currentTask, newTask]);
+    console.log(newTask);
+  };
+
   return (
     <View style = {styles.container}>
       <View style = {styles.inputContainer}>
         <TextInput
           placeholder = "Task List"
           style = {styles.input}
+          onChangeText = {taskInputHandler}
+          value = {newTask}
         />
-        <Button title = "+"/>
+        <Button
+          title = "+"
+          onPress = {addTaskHandler}
+        />
+      </View>
+
+      <View>
+        {appTasks.map((task) => <Text>{task}</Text>)}
       </View>
     </View>
   );
